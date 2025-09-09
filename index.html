@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index do Rodrigo</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="assets/postit.png" type="image/x-icon">
+</head>
+<body>
+    <div id="screen">
+        <table >
+            <tr id="params" data-title="paramentro33" data-date="00">
+                <th>Nome</th>
+                <th id="dataT">Data</th>
+                <th>Aula</th>
+            </tr>
+        </table>
+        <div id="data">
+            <h1 id="title"></h1>
+            <h2 id="subject"></h2>
+            <h3 id="date"></h3>
+            <p id="text"></p>
+            <p id="instruc">- Deseja acessar o site?<a id="y">Y  </a>/  <span onclick="touchN()">N</span></p>
+        </div>
+        <video id="link" src="assets/necessidade.mp4">
+        </video>
+            <video id="josh" src="assets/josh.mp4">
+            </video>
+    </div>
+    <div id="postit">
+    <img  src="assets/postit.png">
+    <img id="paper"   src="assets/instructions.png">
+    </div>
+    <div id="filter">
+        <input id="search" type="search" placeholder="Pesquisar">
+        <select id="anoSelect">
+            <option value="all">Todos</option>
+            <option value="23">2023</option>
+            <option value="24">2024</option>
+            <option value="25">2025</option>
+          </select>
+          <p>Sites produzidos:<span id="number"></span></p>
+    </div>
+    <div id="keys">
+    <img class="tec" id="y" src="assets/teclas/y.png"  data-key="y">
+    <img class="tec" id="n" src="assets/teclas/n.png"  data-key="n">
+    <img class="tec" id="enter" src="assets/teclas/e.png"  data-key="e">
+    <img class="tec" id="arrow" src="assets/teclas/a.png" >
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
