@@ -1,0 +1,222 @@
+.contato-hero {
+    background: #FFFFFF;
+    padding: 2.5rem 2rem;
+    margin: 2rem auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    text-align: center;
+}
+
+.contato-hero h1 {
+    color: #007BFF;
+    font-size: 2.3rem;
+    margin-bottom: 0.8rem;
+    position: relative;
+}
+
+.contato-hero h1::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #007BFF, #FF7F50);
+    margin: 0.6rem auto;
+    border-radius: 2px;
+}
+
+.contato-hero p {
+    font-size: 1.1rem;
+    color: #666666;
+    margin: 0;
+}
+
+.contato-conteudo {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+.contato-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.info-card {
+    background: #FFFFFF;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+    border-left: 4px solid #007BFF;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.info-card:hover {
+    transform: translateX(8px);
+    box-shadow: 0 4px 25px rgba(0,123,255,0.1);
+}
+
+.info-card h3 {
+    color: #007BFF;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.info-card p {
+    color: #333333;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.info-card p:last-child {
+    margin-bottom: 0;
+}
+
+.formulario-contato {
+    background: #FFFFFF;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+}
+
+.formulario-contato h2 {
+    color: #007BFF;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    position: relative;
+}
+
+.formulario-contato h2::before {
+    content: '📝';
+    position: absolute;
+    left: -2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.3rem;
+}
+
+.campo-grupo {
+    margin-bottom: 1.5rem;
+}
+
+.campo-grupo label {
+    display: block;
+    color: #333333;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    position: relative;
+}
+
+.campo-grupo label::after {
+    content: '*';
+    color: #FF7F50;
+    margin-left: 3px;
+    font-weight: bold;
+}
+
+.campo-grupo input,
+.campo-grupo select,
+.campo-grupo textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid #CCCCCC;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.campo-grupo input:focus,
+.campo-grupo select:focus,
+.campo-grupo textarea:focus {
+    outline: none;
+    border-color: #007BFF;
+    box-shadow: 0 0 0 3px rgba(0,123,255,0.1);
+}
+
+.campo-grupo input:hover,
+.campo-grupo select:hover,
+.campo-grupo textarea:hover {
+    border-color: #999999;
+}
+
+.campo-grupo textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.btn-enviar {
+    background: #007BFF;
+    color: #FFF;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.2s;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-enviar:hover,
+.btn-enviar:focus {
+    background: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0,123,255,0.3);
+}
+
+.btn-enviar::before {
+    content: '✉️';
+    margin-right: 8px;
+    font-size: 1rem;
+}
+
+.campo-grupo input[type="email"] {
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%23999' d='M8 8.5l8-5v10H0v-10l8 5z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 16px;
+}
+
+@media (max-width: 900px) {
+    .contato-conteudo {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .contato-hero {
+        padding: 2rem 1.5rem;
+    }
+    
+    .formulario-contato {
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .contato-hero h1 {
+        font-size: 1.9rem;
+    }
+    
+    .formulario-contato {
+        padding: 1.5rem;
+    }
+    
+    .formulario-contato h2::before {
+        display: none;
+    }
+    
+    .info-card {
+        padding: 1.5rem;
+    }
+    
+    .info-card:hover {
+        transform: translateY(-5px);
+        transform: translateX(0);
+    }
+}

@@ -1,0 +1,181 @@
+.login-container,
+.cadastro-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+    padding: 2rem 0;
+}
+
+.login-card,
+.cadastro-card {
+    background: #FFFFFF;
+    padding: 3rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 450px;
+    position: relative;
+}
+
+.cadastro-card {
+    max-width: 500px;
+}
+
+.login-card h1,
+.cadastro-card h1 {
+    color: #007BFF;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.login-card h1::after,
+.cadastro-card h1::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #007BFF, #FF7F50);
+    margin: 0.8rem auto 0;
+    border-radius: 2px;
+}
+
+.campo-grupo {
+    margin-bottom: 1.5rem;
+}
+
+.campo-grupo label {
+    display: block;
+    color: #333333;
+    font-weight: 500;
+    margin-bottom: 0.6rem;
+    position: relative;
+}
+
+.campo-grupo label::after {
+    content: '*';
+    color: #FF7F50;
+    margin-left: 4px;
+    font-weight: bold;
+}
+
+.campo-grupo input {
+    width: 100%;
+    padding: 0.9rem;
+    border: 2px solid #CCCCCC;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: all 0.2s;
+}
+
+.campo-grupo input:focus {
+    outline: none;
+    border-color: #007BFF;
+    box-shadow: 0 0 0 3px rgba(0,123,255,0.1);
+    transform: translateY(-1px);
+}
+
+.campo-grupo input:hover {
+    border-color: #999999;
+}
+
+.btn-login,
+.btn-cadastro {
+    background: #007BFF;
+    color: #FFF;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 1.5rem;
+    transition: all 0.2s;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-login:hover,
+.btn-login:focus,
+.btn-cadastro:hover,
+.btn-cadastro:focus {
+    background: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0,123,255,0.3);
+}
+
+.btn-login::before {
+    content: '🔑';
+    margin-right: 8px;
+    font-size: 1rem;
+}
+
+.btn-cadastro::before {
+    content: '👤';
+    margin-right: 8px;
+    font-size: 1rem;
+}
+
+.login-links,
+.cadastro-links {
+    text-align: center;
+    border-top: 1px solid #CCCCCC;
+    padding-top: 1.5rem;
+}
+
+.login-links p,
+.cadastro-links p {
+    color: #666666;
+    margin-bottom: 1rem;
+}
+
+.login-links a,
+.cadastro-links a {
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.login-links a:hover,
+.cadastro-links a:hover,
+.login-links a:focus,
+.cadastro-links a:focus {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+.esqueci-senha {
+    font-size: 0.9rem;
+    color: #FF7F50 !important;
+}
+
+.campo-grupo input[type="password"] {
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%23999' d='M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zM6 9v6h4V9H6z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 16px;
+}
+
+@media (max-width: 600px) {
+    .login-card,
+    .cadastro-card {
+        padding: 2rem;
+        margin: 1rem;
+    }
+    
+    .login-card h1,
+    .cadastro-card h1 {
+        font-size: 1.7rem;
+    }
+    
+    .login-container,
+    .cadastro-container {
+        min-height: 50vh;
+        padding: 1rem 0;
+    }
+}

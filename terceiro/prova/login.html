@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja Moderna - Login</title>
+    <link rel="stylesheet" href="styles/global.css">
+    <link rel="stylesheet" href="styles/log.css">
+</head>
+<body>
+    <main>
+        <section class="login-container container">
+            <div class="login-card">
+                <h1>Fazer Login</h1>
+                <form id="form-login">
+                    <div class="campo-grupo">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="campo-grupo">
+                        <label for="senha">Senha</label>
+                        <input type="password" id="senha" name="senha" required>
+                    </div>
+                    
+                    <button type="submit" class="btn-login">Entrar</button>
+                    
+                    <div class="login-links">
+                        <p>Não tem uma conta? <a href="cadastro.html">Cadastre-se aqui</a></p>
+                        <a href="#" class="esqueci-senha">Esqueci minha senha</a>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Loja Moderna. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    
+    <script>
+        window.addEventListener('load', function() {
+            const usuarioLogado = localStorage.getItem('usuarioLogado');
+            if (usuarioLogado) {
+                document.getElementById('perfil-nome').textContent = usuarioLogado;
+            }
+        });
+
+        document.getElementById('form-login').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('email').value;
+            const senha = document.getElementById('senha').value;
+
+            const usuarios = JSON.parse(localStorage.getItem('usuarios') || '[]');
+            const usuarioEncontrado = usuarios.find(user => 
+                user.email === email && user.senha === senha
+            );
+            
+            if (usuarioEncontrado) {
+                localStorage.setItem('usuarioLogado', usuarioEncontrado.nome);
+        
+                alert('Login realizado com sucesso!');
+                window.location.href = 'index.html';
+            } else {
+                alert('Email ou senha incorretos!');
+            }
+        });
+
+        document.getElementById('perfil-btn').addEventListener('click', function() {
+            const usuarioLogado = localStorage.getItem('usuarioLogado');
+            if (usuarioLogado) {
+                const confirmar = confirm('Deseja fazer logout?');
+                if (confirmar) {
+                    localStorage.removeItem('usuarioLogado');
+                    document.getElementById('perfil-nome').textContent = 'Entrar';
+                    window.location.reload();
+                }
+            }
+        });
+    </script>
+</body>
+</html>

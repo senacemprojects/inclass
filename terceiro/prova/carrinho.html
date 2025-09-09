@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja Moderna - Carrinho</title>
+    <link rel="stylesheet" href="styles/global.css">
+    <link rel="stylesheet" href="styles/carrinho.css">
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="home.html" class="logo">Loja Moderna</a>
+            <ul class="menu">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="produtos.html">Produtos</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+            <div class="perfil-area">
+                <button class="perfil-btn" id="perfil-btn">
+                    <span id="perfil-nome">Entrar</span>
+                </button>
+                <a href="carrinho.html" class="cart-btn active">
+                    🛒 <span id="cart-count">0</span>
+                </a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="carrinho-container container">
+            <h1>Seu Carrinho</h1>
+            
+            <div id="carrinho-vazio" class="carrinho-vazio" style="display: none;">
+                <p>Seu carrinho está vazio!</p>
+                <a href="produtos.html" class="btn-continuar">Continuar Comprando</a>
+            </div>
+            
+            <div id="carrinho-conteudo" class="carrinho-conteudo">
+                <table class="tabela-carrinho">
+                    <thead>
+                        <tr>
+                            <th>Produto</th>
+                            <th>Preço</th>
+                            <th>Quantidade</th>
+                            <th>Subtotal</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="carrinho-itens">
+                    </tbody>
+                </table>
+                
+                <div class="carrinho-resumo">
+                    <div class="resumo-valores">
+                        <div class="linha-valor">
+                            <span>Subtotal:</span>
+                            <span id="subtotal">R$ 0,00</span>
+                        </div>
+                        <div class="linha-valor">
+                            <span>Frete:</span>
+                            <span id="frete">R$ 15,00</span>
+                        </div>
+                        <div class="linha-valor total">
+                            <span>Total:</span>
+                            <span id="total">R$ 15,00</span>
+                        </div>
+                    </div>
+                    
+                    <div class="carrinho-acoes">
+                        <button class="btn-limpar" onclick="limparCarrinho()">Limpar Carrinho</button>
+                        <button class="btn-finalizar" onclick="finalizarCompra()">Finalizar Compra</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Loja Moderna. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    
+    <script>
+        const produtosDisponiveis = {
+            'fone-bluetooth': { nome: 'Fone de Ouvido Bluetooth', preco: 149.90, img: 'img/fone.jpg' },
+            'smartwatch': { nome: 'Smartwatch Fitness', preco: 299.00, img: 'img/relogio.png' },
+            'luminaria-led': { nome: 'Luminária LED USB', preco: 59.90, img: 'img/luminaria.jpg' },
+            'caixa-som': { nome: 'Caixa de Som Portátil', preco: 199.00, img: 'img/caixa.webp' },
+            'teclado-mecanico': { nome: 'Teclado Mecânico RGB', preco: 249.90, img: 'img/teclado.webp' },
+            'mouse-gamer': { nome: 'Mouse Gamer Sem Fio', preco: 139.00, img: 'img/mouse.webp' }
+        };
+
+        window.addEventListener('load', function() {
+            const usuarioLogado = localStorage.getItem('usuarioLogado');
+            if (usuarioLogado) {
+                document.getElementById('perfil-nome').textContent = usuarioLogado;
+            }
+            
+            carregarCarrinho();
+            atualizarContadorCarrinho();
+        });
+
+        function carregarCarrinho() {
+            const carrinho = JSON.parse(localStorage.getItem('carrinho') || '[]');
+            const carrinhoItens = document.getElementById('carrinho-itens');
+            const carrinhoVazio = document.getElementById('carrinho-vazio');
+            const carrinhoConteudo = document.getElementById('carrinho-conteudo');
+            
+            if (carrinho.length === 0) {
+                carrinhoVazio.style.display = 'block';
+                carrinhoConteudo.style.display = 'none';
+                return;
+            }
+            
+            carrinhoVazio.style.display = 'none';
+            carrinhoConteudo.style.display = 'block';
+            
+            carrinhoItens.innerHTML = '';
+            
+            carrinho.forEach((item, index) => {
+                const produto = produtosDisponiveis[item.id];
+                if (produto) {
+                    const tr = document.createElement('tr');
+                    tr.innerHTML = `
+                        <td class="produto-info">
+                            <img src="${produto.img}" alt="${produto.nome}" class="produto-thumb">
+                            <span>${produto.nome}</span>
+                        </td>
+                        <td class="preco">R$ ${produto.preco.toFixed(2).replace('.', ',')}</td>
+                        <td class="quantidade">
+                            <button class="btn-qty" onclick="alterarQuantidade(${index}, -1)">-</button>
+                            <span class="qty-valor">${item.quantidade}</span>
+                            <button class="btn-qty" onclick="alterarQuantidade(${index}, 1)">+</button>
+                        </td>
+                        <td class="subtotal">R$ ${(produto.preco * item.quantidade).toFixed(2).replace('.', ',')}</td>
+                        <td class="acoes">
+                            <button class="btn-remover" onclick="removerItem(${index})">🗑️</button>
+                        </td>
+                    `;
+                    carrinhoItens.appendChild(tr);
+                }
+            });
+            
+            calcularTotais();
+        }
+
+        function alterarQuantidade(index, delta) {
+            const carrinho = JSON.parse(localStorage.getItem('carrinho') || '[]');
+            
+            if (carrinho[index]) {
+                carrinho[index].quantidade += delta;
+                
+                if (carrinho[index].quantidade <= 0) {
+                    carrinho.splice(index, 1);
+                }
+                
+                localStorage.setItem('carrinho', JSON.stringify(carrinho));
+                carregarCarrinho();
+                atualizarContadorCarrinho();
+            }
+        }
+
+        function removerItem(index) {
+            const carrinho = JSON.parse(localStorage.getItem('carrinho') || '[]');
+            carrinho.splice(index, 1);
+            localStorage.setItem('carrinho', JSON.stringify(carrinho));
+            carregarCarrinho();
+            atualizarContadorCarrinho();
+        }
+
+        function calcularTotais() {
+            const carrinho = JSON.parse(localStorage.getItem('carrinho') || '[]');
+            let subtotal = 0;
+            
+            carrinho.forEach(item => {
+                const produto = produtosDisponiveis[item.id];
+                if (produto) {
+                    subtotal += produto.preco * item.quantidade;
+                }
+            });
+            
+            const frete = subtotal > 0 ? 15.00 : 0;
+            const total = subtotal + frete;
+            
+            document.getElementById('subtotal').textContent = `R$ ${subtotal.toFixed(2).replace('.', ',')}`;
+            document.getElementById('frete').textContent = `R$ ${frete.toFixed(2).replace('.', ',')}`;
+            document.getElementById('total').textContent = `R$ ${total.toFixed(2).replace('.', ',')}`;
+        }
+
+        function limparCarrinho() {
+            if (confirm('Deseja remover todos os itens do carrinho?')) {
+                localStorage.removeItem('carrinho');
+                carregarCarrinho();
+                atualizarContadorCarrinho();
+            }
+        }
+
+        function finalizarCompra() {
+            const usuarioLogado = localStorage.getItem('usuarioLogado');
+            
+            if (!usuarioLogado) {
+                alert('É necessário fazer login para finalizar a compra!');
+                window.location.href = 'login.html';
+                return;
+            }
+            
+            const carrinho = JSON.parse(localStorage.getItem('carrinho') || '[]');
+            
+            if (carrinho.length === 0) {
+                alert('Seu carrinho está vazio!');
+                return;
+            }
+            
+            alert('Compra finalizada com sucesso! Obrigado pela preferência.');
+            localStorage.removeItem('carrinho');
+            carregarCarrinho();
+            atualizarContadorCarrinho();
+        }
+
+        function atualizarContadorCarrinho() {
+            const carrinho = JSON.parse(localStorage.getItem('carrinho') || '[]');
+            const total = carrinho.reduce((acc, item) => acc + item.quantidade, 0);
+            document.getElementById('cart-count').textContent = total;
+        }
+
+        document.getElementById('perfil-btn').addEventListener('click', function() {
+            const usuarioLogado = localStorage.getItem('usuarioLogado');
+            if (usuarioLogado) {
+                const confirmar = confirm('Deseja fazer logout?');
+                if (confirmar) {
+                    localStorage.removeItem('usuarioLogado');
+                    document.getElementById('perfil-nome').textContent = 'Entrar';
+                    window.location.href = 'login.html';
+                }
+            } else {
+                window.location.href = 'login.html';
+            }
+        });
+    </script>
+</body>
+</html>

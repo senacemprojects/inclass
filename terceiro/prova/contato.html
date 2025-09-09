@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja Moderna - Contato</title>
+    <link rel="stylesheet" href="styles/global.css">
+    <link rel="stylesheet" href="styles/contato.css">
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="home.html" class="logo">Loja Moderna</a>
+            <ul class="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="produtos.html">Produtos</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="contato.html" class="active">Contato</a></li>
+            </ul>
+            <div class="perfil-area">
+                <button class="perfil-btn" id="perfil-btn">
+                    <span id="perfil-nome">Entrar</span>
+                </button>
+                <a href="carrinho.html" class="cart-btn">🛒</a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="contato-hero container">
+            <h1>Fale Conosco</h1>
+            <p>Entre em contato conosco. Estamos aqui para ajudar!</p>
+        </section>
+        
+        <section class="contato-conteudo container">
+            <div class="contato-info">
+                <article class="info-card">
+                    <h3>Atendimento ao Cliente</h3>
+                    <p>📧 contato@lojamoderna.com.br</p>
+                    <p>📞 (11) 9999-8888</p>
+                    <p>⏰ Segunda a Sexta: 8h às 18h</p>
+                </article>
+                
+                <article class="info-card">
+                    <h3>Suporte Técnico</h3>
+                    <p>📧 suporte@lojamoderna.com.br</p>
+                    <p>📞 (11) 9999-7777</p>
+                    <p>⏰ Segunda a Sábado: 8h às 20h</p>
+                </article>
+                
+                <article class="info-card">
+                    <h3>Vendas</h3>
+                    <p>📧 vendas@lojamoderna.com.br</p>
+                    <p>📞 (11) 9999-6666</p>
+                    <p>⏰ Segunda a Domingo: 8h às 22h</p>
+                </article>
+            </div>
+            
+            <div class="formulario-contato">
+                <h2>Envie sua Mensagem</h2>
+                <form id="form-contato">
+                    <div class="campo-grupo">
+                        <label for="nome">Nome Completo</label>
+                        <input type="text" id="nome" name="nome" required>
+                    </div>
+                    
+                    <div class="campo-grupo">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="campo-grupo">
+                        <label for="assunto">Assunto</label>
+                        <select id="assunto" name="assunto" required>
+                            <option value="">Selecione um assunto</option>
+                            <option value="duvida-produto">Dúvida sobre produto</option>
+                            <option value="problema-pedido">Problema com pedido</option>
+                            <option value="suporte-tecnico">Suporte técnico</option>
+                            <option value="sugestao">Sugestão</option>
+                            <option value="outro">Outro</option>
+                        </select>
+                    </div>
+                    
+                    <div class="campo-grupo">
+                        <label for="mensagem">Mensagem</label>
+                        <textarea id="mensagem" name="mensagem" rows="6" placeholder="Digite sua mensagem aqui..." required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn-enviar">Enviar Mensagem</button>
+                </form>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Loja Moderna. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    <script>    
+        document.getElementById('form-contato').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Mensagem enviada com sucesso! Entraremos em contato em breve.');
+            this.reset();
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
