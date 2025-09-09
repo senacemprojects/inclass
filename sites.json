@@ -3,9 +3,23 @@
   {
     "title": "Aquapure Salpa (projeto)",
     "subject": "PP",
-    "date": "06/03/25",
-    "text": "Site do projeto feito em PP para a boia Salpa desenvolvida",
+    "date": "09/09/25",
+    "text": "Site do projeto salpa feito no componente de Projeto Profissional, funciona como acesso digital ao projeto além de ter informações básicas.",
     "link": "projeto"
+  },
+  {
+    "title": "Site de vendas (simples)",
+    "subject": "Técnico",
+    "date": "28/08/25",
+    "text": "O Site conta com uma forma simplificada de um site de vendas. Feito para uma atividade avaliativa do componente.",
+    "link": "prova"
+  },
+  {
+    "title": "Perfil",
+    "subject": "Técnico",
+    "date": "12/08/25",
+    "text": "Pagina feita para demonstrar conhecimentos basicos de HTML e css. A página conta com um resumo sobre mim e meus gostos.",
+    "link": "perfil"
   },
   {
     "title": "Oficina parte 2",
@@ -113,3 +127,4 @@
     "link": "indicacoes"
   }
 ]
+
