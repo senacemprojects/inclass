@@ -40,12 +40,10 @@ Sistema de monitoramento IoT integrado para boia filtrante de microplásticos, d
 - **Versionamento**: Controle de versões com Git e GitHub
 - **Metodologia**: Aplicação de boas práticas de desenvolvimento web
 
-## 📞 Contato
-
 Este repositório representa minha jornada de aprendizado no ensino técnico, demonstrando dedicação ao desenvolvimento de soluções web eficientes e inovadoras.
 
 ---
 
 > **Curso**: Ensino Médio Técnico em Informática para Internet  
-> **Instituição**: SENAC  
-> **Período**: [Ano de Início] - [Ano de Conclusão]
+> **Instituição**: SENAC Santa Cruz do Sul
+> **Período**: 2023 - 2025
