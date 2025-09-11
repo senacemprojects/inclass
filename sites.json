@@ -127,6 +127,13 @@
     "link": "PP"
   },
   {
+    "title": "Windows Index",
+    "subject": "Técnico",
+    "date": "30/04/23",
+    "text": "Index feita no primeiro ano para minhas paginas, o objetivo era a semelhança com a interface do windows XP",
+    "link": "oldIndex"
+  },
+  {
     "title": "Indicações",
     "subject": "Técnico",
     "date": "24/04/23",
@@ -134,5 +141,6 @@
     "link": "indicacoes"
   }
 ]
+
 
 
