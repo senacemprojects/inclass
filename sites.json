@@ -8,6 +8,13 @@
     "link": "projeto"
   },
   {
+    "title": "Site exemplo projeto",
+    "subject": "PP/Extra",
+    "date": "11/09/25",
+    "text": "A pagina foi feita ultilizando o perplexity labs para servir como exemplo para a pagina de um trabalho sobre IA do segundo ano.",
+    "link": "paginaIA"
+  },
+  {
     "title": "Site de vendas (simples)",
     "subject": "Técnico",
     "date": "28/08/25",
@@ -127,4 +134,5 @@
     "link": "indicacoes"
   }
 ]
+
 
