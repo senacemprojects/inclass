@@ -1,83 +1,94 @@
 :root {
-  /* Primitive Color Tokens */
+  /* Primitive Color Tokens - Updated with company colors */
   --color-white: rgba(255, 255, 255, 1);
   --color-black: rgba(0, 0, 0, 1);
-  --color-cream-50: rgba(252, 252, 249, 1);
-  --color-cream-100: rgba(255, 255, 253, 1);
-  --color-gray-200: rgba(245, 245, 245, 1);
-  --color-gray-300: rgba(167, 169, 169, 1);
-  --color-gray-400: rgba(119, 124, 124, 1);
-  --color-slate-500: rgba(98, 108, 113, 1);
-  --color-brown-600: rgba(94, 82, 64, 1);
-  --color-charcoal-700: rgba(31, 33, 33, 1);
-  --color-charcoal-800: rgba(38, 40, 40, 1);
-  --color-slate-900: rgba(19, 52, 59, 1);
-  --color-teal-300: rgba(50, 184, 198, 1);
-  --color-teal-400: rgba(45, 166, 178, 1);
-  --color-teal-500: rgba(33, 128, 141, 1);
-  --color-teal-600: rgba(29, 116, 128, 1);
-  --color-teal-700: rgba(26, 104, 115, 1);
-  --color-teal-800: rgba(41, 150, 161, 1);
-  --color-red-400: rgba(255, 84, 89, 1);
-  --color-red-500: rgba(192, 21, 47, 1);
-  --color-orange-400: rgba(230, 129, 97, 1);
-  --color-orange-500: rgba(168, 75, 47, 1);
+  --color-cream-50: rgba(248, 250, 252, 1); /* Slightly cooler tone */
+  --color-cream-100: rgba(241, 245, 249, 1); /* Cooler light background */
+  --color-gray-200: rgba(226, 232, 240, 1);
+  --color-gray-300: rgba(148, 163, 184, 1);
+  --color-gray-400: rgba(100, 116, 139, 1);
+  --color-slate-500: rgba(71, 85, 105, 1);
+  --color-brown-600: var(--color-company-dark); /* Using company dark color */
+  --color-charcoal-700: rgba(30, 41, 59, 1); /* Darker, more professional */
+  --color-charcoal-800: rgba(15, 23, 42, 1); /* Even darker */
+  --color-slate-900: var(--color-company-dark); /* Company dark color */
+  
+  /* Company Colors - Primary palette */
+  --color-company-primary: rgba(8, 103, 139, 1); /* #08678B */
+  --color-company-dark: rgba(5, 61, 87, 1); /* #053D57 */
+  --color-company-primary-light: rgba(14, 165, 233, 1); /* Lighter variant */
+  --color-company-primary-dark: rgba(3, 44, 60, 1); /* Darker variant */
+  
+  /* Enhanced teal variations for depth */
+  --color-teal-300: rgba(94, 234, 212, 1);
+  --color-teal-400: rgba(45, 212, 191, 1);
+  --color-teal-500: var(--color-company-primary); /* Company primary */
+  --color-teal-600: rgba(8, 145, 178, 1);
+  --color-teal-700: rgba(15, 118, 110, 1);
+  --color-teal-800: rgba(17, 94, 89, 1);
+  
+  /* Status colors - more professional */
+  --color-red-400: rgba(248, 113, 113, 1);
+  --color-red-500: rgba(239, 68, 68, 1);
+  --color-orange-400: rgba(251, 146, 60, 1);
+  --color-orange-500: rgba(249, 115, 22, 1);
 
   /* RGB versions for opacity control */
-  --color-brown-600-rgb: 94, 82, 64;
-  --color-teal-500-rgb: 33, 128, 141;
-  --color-slate-900-rgb: 19, 52, 59;
-  --color-slate-500-rgb: 98, 108, 113;
-  --color-red-500-rgb: 192, 21, 47;
-  --color-red-400-rgb: 255, 84, 89;
-  --color-orange-500-rgb: 168, 75, 47;
-  --color-orange-400-rgb: 230, 129, 97;
+  --color-company-primary-rgb: 8, 103, 139;
+  --color-company-dark-rgb: 5, 61, 87;
+  --color-teal-500-rgb: var(--color-company-primary-rgb);
+  --color-slate-900-rgb: var(--color-company-dark-rgb);
+  --color-slate-500-rgb: 71, 85, 105;
+  --color-red-500-rgb: 239, 68, 68;
+  --color-red-400-rgb: 248, 113, 113;
+  --color-orange-500-rgb: 249, 115, 22;
+  --color-orange-400-rgb: 251, 146, 60;
 
-  /* Background color tokens (Light Mode) */
-  --color-bg-1: rgba(59, 130, 246, 0.08); /* Light blue */
-  --color-bg-2: rgba(245, 158, 11, 0.08); /* Light yellow */
-  --color-bg-3: rgba(34, 197, 94, 0.08); /* Light green */
-  --color-bg-4: rgba(239, 68, 68, 0.08); /* Light red */
-  --color-bg-5: rgba(147, 51, 234, 0.08); /* Light purple */
-  --color-bg-6: rgba(249, 115, 22, 0.08); /* Light orange */
-  --color-bg-7: rgba(236, 72, 153, 0.08); /* Light pink */
-  --color-bg-8: rgba(6, 182, 212, 0.08); /* Light cyan */
+  /* Background color tokens (Light Mode) - More subdued */
+  --color-bg-1: rgba(8, 103, 139, 0.06); /* Company primary teal */
+  --color-bg-2: rgba(249, 115, 22, 0.06); /* Orange */
+  --color-bg-3: rgba(34, 197, 94, 0.06); /* Green */
+  --color-bg-4: rgba(239, 68, 68, 0.06); /* Red */
+  --color-bg-5: rgba(147, 51, 234, 0.06); /* Purple */
+  --color-bg-6: rgba(5, 61, 87, 0.06); /* Company dark */
+  --color-bg-7: rgba(236, 72, 153, 0.06); /* Pink */
+  --color-bg-8: rgba(8, 103, 139, 0.08); /* Stronger company primary */
 
   /* Semantic Color Tokens (Light Mode) */
-  --color-background: var(--color-cream-50);
-  --color-surface: var(--color-cream-100);
-  --color-text: var(--color-slate-900);
-  --color-text-secondary: var(--color-slate-500);
-  --color-primary: var(--color-teal-500);
-  --color-primary-hover: var(--color-teal-600);
-  --color-primary-active: var(--color-teal-700);
-  --color-secondary: rgba(var(--color-brown-600-rgb), 0.12);
-  --color-secondary-hover: rgba(var(--color-brown-600-rgb), 0.2);
-  --color-secondary-active: rgba(var(--color-brown-600-rgb), 0.25);
-  --color-border: rgba(var(--color-brown-600-rgb), 0.2);
-  --color-btn-primary-text: var(--color-cream-50);
-  --color-card-border: rgba(var(--color-brown-600-rgb), 0.12);
-  --color-card-border-inner: rgba(var(--color-brown-600-rgb), 0.12);
+  --color-background: rgba(241, 245, 249, 1); /* Cool, professional background */
+  --color-surface: rgba(255, 255, 255, 1);
+  --color-text: var(--color-company-dark);
+  --color-text-secondary: rgba(71, 85, 105, 1);
+  --color-primary: var(--color-company-primary);
+  --color-primary-hover: rgba(8, 145, 178, 1);
+  --color-primary-active: var(--color-company-dark);
+  --color-secondary: rgba(var(--color-company-dark-rgb), 0.10);
+  --color-secondary-hover: rgba(var(--color-company-dark-rgb), 0.15);
+  --color-secondary-active: rgba(var(--color-company-dark-rgb), 0.20);
+  --color-border: rgba(var(--color-company-dark-rgb), 0.15);
+  --color-btn-primary-text: var(--color-white);
+  --color-card-border: rgba(var(--color-company-dark-rgb), 0.10);
+  --color-card-border-inner: rgba(var(--color-company-dark-rgb), 0.08);
   --color-error: var(--color-red-500);
-  --color-success: var(--color-teal-500);
+  --color-success: var(--color-company-primary);
   --color-warning: var(--color-orange-500);
   --color-info: var(--color-slate-500);
-  --color-focus-ring: rgba(var(--color-teal-500-rgb), 0.4);
-  --color-select-caret: rgba(var(--color-slate-900-rgb), 0.8);
+  --color-focus-ring: rgba(var(--color-company-primary-rgb), 0.4);
+  --color-select-caret: rgba(var(--color-company-dark-rgb), 0.8);
 
   /* Common style patterns */
   --focus-ring: 0 0 0 3px var(--color-focus-ring);
   --focus-outline: 2px solid var(--color-primary);
-  --status-bg-opacity: 0.15;
-  --status-border-opacity: 0.25;
-  --select-caret-light: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23134252' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-  --select-caret-dark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23f5f5f5' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  --status-bg-opacity: 0.12;
+  --status-border-opacity: 0.20;
+  --select-caret-light: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23053D57' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  --select-caret-dark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23e2e8f0' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
 
   /* RGB versions for opacity control */
-  --color-success-rgb: 33, 128, 141;
-  --color-error-rgb: 192, 21, 47;
-  --color-warning-rgb: 168, 75, 47;
-  --color-info-rgb: 98, 108, 113;
+  --color-success-rgb: var(--color-company-primary-rgb);
+  --color-error-rgb: 239, 68, 68;
+  --color-warning-rgb: 249, 115, 22;
+  --color-info-rgb: 71, 85, 105;
 
   /* Typography */
   --font-family-base: "FKGroteskNeue", "Geist", "Inter", -apple-system,
@@ -122,15 +133,15 @@
   --radius-lg: 12px;
   --radius-full: 9999px;
 
-  /* Shadows */
-  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.02);
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.04),
-    0 2px 4px -1px rgba(0, 0, 0, 0.02);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.04),
-    0 4px 6px -2px rgba(0, 0, 0, 0.02);
+  /* Shadows - More professional */
+  --shadow-xs: 0 1px 2px rgba(5, 61, 87, 0.05);
+  --shadow-sm: 0 1px 3px rgba(5, 61, 87, 0.08), 0 1px 2px rgba(5, 61, 87, 0.04);
+  --shadow-md: 0 4px 6px -1px rgba(5, 61, 87, 0.08),
+    0 2px 4px -1px rgba(5, 61, 87, 0.04);
+  --shadow-lg: 0 10px 15px -3px rgba(5, 61, 87, 0.10),
+    0 4px 6px -2px rgba(5, 61, 87, 0.05);
   --shadow-inset-sm: inset 0 1px 0 rgba(255, 255, 255, 0.15),
-    inset 0 -1px 0 rgba(0, 0, 0, 0.03);
+    inset 0 -1px 0 rgba(5, 61, 87, 0.08);
 
   /* Animation */
   --duration-fast: 150ms;
@@ -144,96 +155,128 @@
   --container-xl: 1280px;
 }
 
-/* Data attribute for manual theme switching */
+/* Dark Mode - Professional and serious */
 [data-color-scheme="dark"] {
   /* RGB versions for opacity control (dark mode) */
-  --color-gray-400-rgb: 119, 124, 124;
-  --color-teal-300-rgb: 50, 184, 198;
-  --color-gray-300-rgb: 167, 169, 169;
-  --color-gray-200-rgb: 245, 245, 245;
+  --color-gray-400-rgb: 100, 116, 139;
+  --color-teal-300-rgb: 94, 234, 212;
+  --color-gray-300-rgb: 148, 163, 184;
+  --color-gray-200-rgb: 226, 232, 240;
 
-  /* Colorful background palette - Dark Mode */
-  --color-bg-1: rgba(29, 78, 216, 0.15); /* Dark blue */
-  --color-bg-2: rgba(180, 83, 9, 0.15); /* Dark yellow */
-  --color-bg-3: rgba(21, 128, 61, 0.15); /* Dark green */
-  --color-bg-4: rgba(185, 28, 28, 0.15); /* Dark red */
-  --color-bg-5: rgba(107, 33, 168, 0.15); /* Dark purple */
-  --color-bg-6: rgba(194, 65, 12, 0.15); /* Dark orange */
-  --color-bg-7: rgba(190, 24, 93, 0.15); /* Dark pink */
-  --color-bg-8: rgba(8, 145, 178, 0.15); /* Dark cyan */
+  /* Colorful background palette - Dark Mode with company colors */
+  --color-bg-1: rgba(8, 103, 139, 0.12); /* Company primary */
+  --color-bg-2: rgba(249, 115, 22, 0.10); /* Orange */
+  --color-bg-3: rgba(34, 197, 94, 0.10); /* Green */
+  --color-bg-4: rgba(239, 68, 68, 0.10); /* Red */
+  --color-bg-5: rgba(147, 51, 234, 0.10); /* Purple */
+  --color-bg-6: rgba(5, 61, 87, 0.15); /* Company dark */
+  --color-bg-7: rgba(236, 72, 153, 0.10); /* Pink */
+  --color-bg-8: rgba(8, 103, 139, 0.08); /* Subtle company primary */
   
-  /* Semantic Color Tokens (Dark Mode) */
-  --color-background: var(--color-charcoal-700);
-  --color-surface: var(--color-charcoal-800);
-  --color-text: var(--color-gray-200);
-  --color-text-secondary: rgba(var(--color-gray-300-rgb), 0.7);
-  --color-primary: var(--color-teal-300);
-  --color-primary-hover: var(--color-teal-400);
-  --color-primary-active: var(--color-teal-800);
+  /* Semantic Color Tokens (Dark Mode) - Professional dark theme */
+  --color-background: rgba(15, 23, 42, 1); /* Very dark background */
+  --color-surface: rgba(30, 41, 59, 1); /* Dark surface */
+  --color-text: rgba(241, 245, 249, 1); /* Light text */
+  --color-text-secondary: rgba(148, 163, 184, 0.8); /* Muted secondary text */
+  --color-primary: rgba(14, 165, 233, 1); /* Brighter company primary for dark mode */
+  --color-primary-hover: rgba(56, 189, 248, 1); /* Lighter on hover */
+  --color-primary-active: rgba(8, 103, 139, 1); /* Original company color */
   --color-secondary: rgba(var(--color-gray-400-rgb), 0.15);
-  --color-secondary-hover: rgba(var(--color-gray-400-rgb), 0.25);
-  --color-secondary-active: rgba(var(--color-gray-400-rgb), 0.3);
-  --color-border: rgba(var(--color-gray-400-rgb), 0.3);
-  --color-error: var(--color-red-400);
-  --color-success: var(--color-teal-300);
-  --color-warning: var(--color-orange-400);
-  --color-info: var(--color-gray-300);
-  --color-focus-ring: rgba(var(--color-teal-300-rgb), 0.4);
-  --color-btn-primary-text: var(--color-slate-900);
+  --color-secondary-hover: rgba(var(--color-gray-400-rgb), 0.20);
+  --color-secondary-active: rgba(var(--color-gray-400-rgb), 0.25);
+  --color-border: rgba(var(--color-gray-400-rgb), 0.20);
+  --color-error: rgba(248, 113, 113, 1);
+  --color-success: rgba(14, 165, 233, 1); /* Company primary variant */
+  --color-warning: rgba(251, 146, 60, 1);
+  --color-info: rgba(148, 163, 184, 1);
+  --color-focus-ring: rgba(14, 165, 233, 0.4);
+  --color-btn-primary-text: rgba(15, 23, 42, 1); /* Dark text on bright button */
   --color-card-border: rgba(var(--color-gray-400-rgb), 0.15);
-  --color-card-border-inner: rgba(var(--color-gray-400-rgb), 0.15);
-  --shadow-inset-sm: inset 0 1px 0 rgba(255, 255, 255, 0.1),
-    inset 0 -1px 0 rgba(0, 0, 0, 0.15);
-  --color-border-secondary: rgba(var(--color-gray-400-rgb), 0.2);
+  --color-card-border-inner: rgba(var(--color-gray-400-rgb), 0.10);
+  --shadow-inset-sm: inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.20);
+  --color-border-secondary: rgba(var(--color-gray-400-rgb), 0.15);
   --color-select-caret: rgba(var(--color-gray-200-rgb), 0.8);
 
-  /* Common style patterns - updated for dark mode */
-  --focus-ring: 0 0 0 3px var(--color-focus-ring);
-  --focus-outline: 2px solid var(--color-primary);
-  --status-bg-opacity: 0.15;
-  --status-border-opacity: 0.25;
-  --select-caret-light: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23134252' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-  --select-caret-dark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23f5f5f5' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  /* Enhanced shadows for dark mode */
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.15);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.20), 0 1px 2px rgba(0, 0, 0, 0.10);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.25),
+    0 2px 4px -1px rgba(0, 0, 0, 0.15);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.30),
+    0 4px 6px -2px rgba(0, 0, 0, 0.20);
 
   /* RGB versions for dark mode */
-  --color-success-rgb: var(--color-teal-300-rgb);
-  --color-error-rgb: var(--color-red-400-rgb);
-  --color-warning-rgb: var(--color-orange-400-rgb);
-  --color-info-rgb: var(--color-gray-300-rgb);
+  --color-success-rgb: 14, 165, 233;
+  --color-error-rgb: 248, 113, 113;
+  --color-warning-rgb: 251, 146, 60;
+  --color-info-rgb: 148, 163, 184;
+}
+
+/* Force dark mode as default - Remove this if you want to keep light mode option */
+:root {
+  /* Apply dark mode colors by default */
+  --color-background: rgba(15, 23, 42, 1);
+  --color-surface: rgba(30, 41, 59, 1);
+  --color-text: rgba(241, 245, 249, 1);
+  --color-text-secondary: rgba(148, 163, 184, 0.8);
+  --color-primary: rgb(12, 135, 180); /* Company primary */
+  --color-primary-hover: rgba(14, 165, 233, 1);
+  --color-primary-active: rgba(5, 61, 87, 1); /* Company dark */
+  --color-secondary: rgba(100, 116, 139, 0.15);
+  --color-secondary-hover: rgba(100, 116, 139, 0.20);
+  --color-secondary-active: rgba(100, 116, 139, 0.25);
+  --color-border: rgba(100, 116, 139, 0.20);
+  --color-btn-primary-text: rgba(241, 245, 249, 1);
+  --color-card-border: rgba(100, 116, 139, 0.15);
+  --color-card-border-inner: rgba(100, 116, 139, 0.10);
+  --color-error: rgba(248, 113, 113, 1);
+  --color-success: rgba(8, 103, 139, 1);
+  --color-warning: rgba(251, 146, 60, 1);
+  --color-info: rgba(148, 163, 184, 1);
+  --color-focus-ring: rgba(8, 103, 139, 0.4);
+  --color-select-caret: rgba(226, 232, 240, 0.8);
+  
+  /* Enhanced shadows */
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.15);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.20), 0 1px 2px rgba(0, 0, 0, 0.10);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.25),
+    0 2px 4px -1px rgba(0, 0, 0, 0.15);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.30),
+    0 4px 6px -2px rgba(0, 0, 0, 0.20);
+  
+  /* Background patterns with company colors */
+  --color-bg-1: rgba(8, 103, 139, 0.12);
+  --color-bg-2: rgba(249, 115, 22, 0.10);
+  --color-bg-3: rgba(34, 197, 94, 0.10);
+  --color-bg-4: rgba(239, 68, 68, 0.10);
+  --color-bg-5: rgba(147, 51, 234, 0.10);
+  --color-bg-6: rgba(5, 61, 87, 0.15);
+  --color-bg-7: rgba(236, 72, 153, 0.10);
+  --color-bg-8: rgba(8, 103, 139, 0.08);
 }
 
 [data-color-scheme="light"] {
-  /* RGB versions for opacity control (light mode) */
-  --color-brown-600-rgb: 94, 82, 64;
-  --color-teal-500-rgb: 33, 128, 141;
-  --color-slate-900-rgb: 19, 52, 59;
-  
-  /* Semantic Color Tokens (Light Mode) */
-  --color-background: var(--color-cream-50);
-  --color-surface: var(--color-cream-100);
-  --color-text: var(--color-slate-900);
-  --color-text-secondary: var(--color-slate-500);
-  --color-primary: var(--color-teal-500);
-  --color-primary-hover: var(--color-teal-600);
-  --color-primary-active: var(--color-teal-700);
-  --color-secondary: rgba(var(--color-brown-600-rgb), 0.12);
-  --color-secondary-hover: rgba(var(--color-brown-600-rgb), 0.2);
-  --color-secondary-active: rgba(var(--color-brown-600-rgb), 0.25);
-  --color-border: rgba(var(--color-brown-600-rgb), 0.2);
-  --color-btn-primary-text: var(--color-cream-50);
-  --color-card-border: rgba(var(--color-brown-600-rgb), 0.12);
-  --color-card-border-inner: rgba(var(--color-brown-600-rgb), 0.12);
+  /* Keep original light mode for manual switching */
+  --color-background: rgba(241, 245, 249, 1);
+  --color-surface: rgba(255, 255, 255, 1);
+  --color-text: var(--color-company-dark);
+  --color-text-secondary: rgba(71, 85, 105, 1);
+  --color-primary: var(--color-company-primary);
+  --color-primary-hover: rgba(8, 145, 178, 1);
+  --color-primary-active: var(--color-company-dark);
+  --color-secondary: rgba(var(--color-company-dark-rgb), 0.10);
+  --color-secondary-hover: rgba(var(--color-company-dark-rgb), 0.15);
+  --color-secondary-active: rgba(var(--color-company-dark-rgb), 0.20);
+  --color-border: rgba(var(--color-company-dark-rgb), 0.15);
+  --color-btn-primary-text: var(--color-white);
+  --color-card-border: rgba(var(--color-company-dark-rgb), 0.10);
+  --color-card-border-inner: rgba(var(--color-company-dark-rgb), 0.08);
   --color-error: var(--color-red-500);
-  --color-success: var(--color-teal-500);
+  --color-success: var(--color-company-primary);
   --color-warning: var(--color-orange-500);
   --color-info: var(--color-slate-500);
-  --color-focus-ring: rgba(var(--color-teal-500-rgb), 0.4);
-
-  /* RGB versions for light mode */
-  --color-success-rgb: var(--color-teal-500-rgb);
-  --color-error-rgb: var(--color-red-500-rgb);
-  --color-warning-rgb: var(--color-orange-500-rgb);
-  --color-info-rgb: var(--color-slate-500-rgb);
+  --color-focus-ring: rgba(var(--color-company-primary-rgb), 0.4);
 }
 
 /* Base styles */
@@ -301,6 +344,10 @@ a {
   transition: color var(--duration-fast) var(--ease-standard);
 }
 
+a:hover {
+  color: var(--color-primary-hover);
+}
+
 code,
 pre {
   font-family: var(--font-family-mono);
@@ -354,10 +401,13 @@ pre code {
 
 .btn--primary:hover {
   background: var(--color-primary-hover);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
 }
 
 .btn--primary:active {
   background: var(--color-primary-active);
+  transform: translateY(0);
 }
 
 .btn--secondary {
@@ -381,6 +431,7 @@ pre code {
 
 .btn--outline:hover {
   background: var(--color-secondary);
+  border-color: var(--color-primary);
 }
 
 .btn--sm {
@@ -429,32 +480,17 @@ select.form-control {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  background-image: var(--select-caret-light);
+  background-image: var(--select-caret-dark);
   background-repeat: no-repeat;
   background-position: right var(--space-12) center;
   background-size: 16px;
   padding-right: var(--space-32);
 }
 
-/* Add a dark mode specific caret */
-@media (prefers-color-scheme: dark) {
-  select.form-control {
-    background-image: var(--select-caret-dark);
-  }
-}
-
-/* Also handle data-color-scheme */
-[data-color-scheme="dark"] select.form-control {
-  background-image: var(--select-caret-dark);
-}
-
-[data-color-scheme="light"] select.form-control {
-  background-image: var(--select-caret-light);
-}
-
 .form-control:focus {
   border-color: var(--color-primary);
   outline: var(--focus-outline);
+  box-shadow: var(--focus-ring);
 }
 
 .form-label {
@@ -475,11 +511,13 @@ select.form-control {
   border: 1px solid var(--color-card-border);
   box-shadow: var(--shadow-sm);
   overflow: hidden;
-  transition: box-shadow var(--duration-normal) var(--ease-standard);
+  transition: box-shadow var(--duration-normal) var(--ease-standard),
+             transform var(--duration-normal) var(--ease-standard);
 }
 
 .card:hover {
   box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
 }
 
 .card__body {
@@ -492,7 +530,7 @@ select.form-control {
   border-bottom: 1px solid var(--color-card-border-inner);
 }
 
-/* Status indicators - simplified with CSS variables */
+/* Status indicators */
 .status {
   display: inline-flex;
   align-items: center;
@@ -504,42 +542,42 @@ select.form-control {
 
 .status--success {
   background-color: rgba(
-    var(--color-success-rgb, 33, 128, 141),
+    var(--color-success-rgb, 8, 103, 139),
     var(--status-bg-opacity)
   );
   color: var(--color-success);
   border: 1px solid
-    rgba(var(--color-success-rgb, 33, 128, 141), var(--status-border-opacity));
+    rgba(var(--color-success-rgb, 8, 103, 139), var(--status-border-opacity));
 }
 
 .status--error {
   background-color: rgba(
-    var(--color-error-rgb, 192, 21, 47),
+    var(--color-error-rgb, 248, 113, 113),
     var(--status-bg-opacity)
   );
   color: var(--color-error);
   border: 1px solid
-    rgba(var(--color-error-rgb, 192, 21, 47), var(--status-border-opacity));
+    rgba(var(--color-error-rgb, 248, 113, 113), var(--status-border-opacity));
 }
 
 .status--warning {
   background-color: rgba(
-    var(--color-warning-rgb, 168, 75, 47),
+    var(--color-warning-rgb, 251, 146, 60),
     var(--status-bg-opacity)
   );
   color: var(--color-warning);
   border: 1px solid
-    rgba(var(--color-warning-rgb, 168, 75, 47), var(--status-border-opacity));
+    rgba(var(--color-warning-rgb, 251, 146, 60), var(--status-border-opacity));
 }
 
 .status--info {
   background-color: rgba(
-    var(--color-info-rgb, 98, 108, 113),
+    var(--color-info-rgb, 148, 163, 184),
     var(--status-bg-opacity)
   );
   color: var(--color-info);
   border: 1px solid
-    rgba(var(--color-info-rgb, 98, 108, 113), var(--status-border-opacity));
+    rgba(var(--color-info-rgb, 148, 163, 184), var(--status-border-opacity));
 }
 
 /* Container layout */
@@ -661,11 +699,6 @@ select.form-control {
   outline-offset: 2px;
 }
 
-/* Dark mode specifics */
-[data-color-scheme="dark"] .btn--outline {
-  border: 1px solid var(--color-border-secondary);
-}
-
 @font-face {
   font-family: 'FKGroteskNeue';
   src: url('https://r2cdn.perplexity.ai/fonts/FKGroteskNeue.woff2')
@@ -683,6 +716,7 @@ select.form-control {
   top: 0;
   z-index: 1000;
   box-shadow: var(--shadow-sm);
+  backdrop-filter: blur(10px);
 }
 
 .nav {
@@ -733,6 +767,7 @@ select.form-control {
 .nav__link:hover {
   background-color: var(--color-secondary);
   color: var(--color-primary);
+  transform: translateY(-1px);
 }
 
 .nav__toggle {
@@ -751,6 +786,21 @@ select.form-control {
   min-height: 80vh;
   display: flex;
   align-items: center;
+  position: relative;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, 
+    rgba(8, 103, 139, 0.1) 0%, 
+    rgba(5, 61, 87, 0.05) 50%, 
+    rgba(8, 103, 139, 0.08) 100%);
+  pointer-events: none;
 }
 
 .hero .container {
@@ -758,6 +808,8 @@ select.form-control {
   grid-template-columns: 1fr 1fr;
   gap: var(--space-32);
   align-items: center;
+  position: relative;
+  z-index: 1;
 }
 
 .hero__content {
@@ -821,8 +873,9 @@ select.form-control {
 }
 
 .pictures {
-  width:100%;
-  height:100%;object-fit:cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* Sections */
@@ -907,13 +960,15 @@ select.form-control {
 }
 
 .feature-card:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-primary);
 }
 
 .feature-card__icon {
   font-size: 2.5rem;
   margin-bottom: var(--space-16);
+  color: var(--color-primary);
 }
 
 .feature-card__title {
@@ -950,7 +1005,8 @@ select.form-control {
 
 .tech-list li:hover {
   background-color: var(--color-secondary);
-  transform: translateX(var(--space-4));
+  transform: translateX(var(--space-8));
+  box-shadow: var(--shadow-sm);
 }
 
 /* Results */
@@ -968,6 +1024,12 @@ select.form-control {
   text-align: center;
   border: 1px solid var(--color-card-border);
   box-shadow: var(--shadow-sm);
+  transition: all var(--duration-normal) var(--ease-standard);
+}
+
+.result-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
 }
 
 .result-card__title {
@@ -1010,7 +1072,7 @@ select.form-control {
 
 .gallery-item:hover {
   transform: scale(1.02);
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-lg);
 }
 
 .gallery-item .image-placeholder {
@@ -1033,29 +1095,6 @@ select.form-control {
 
 .gallery-item:hover .pictures {
   transform: scale(1.1);
-}
-
-/* Responsividade para a Galeria */
-@media (max-width: 768px) {
-  .gallery-grid {
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: var(--space-12);
-  }
-  
-  .gallery-item {
-    height: 200px;
-  }
-}
-
-@media (max-width: 480px) {
-  .gallery-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-8);
-  }
-  
-  .gallery-item {
-    height: 180px;
-  }
 }
 
 /* Contact */
@@ -1109,26 +1148,16 @@ select.form-control {
 
 .contact-btn:hover {
   background-color: var(--color-secondary);
-  transform: translateY(-1px);
+  transform: translateY(-2px);
   box-shadow: var(--shadow-md);
-}
-
-.contact-btn--whatsapp:hover {
-  border-color: #25D366;
-}
-
-.contact-btn--email:hover {
   border-color: var(--color-primary);
-}
-
-.contact-btn--phone:hover {
-  border-color: var(--color-warning);
 }
 
 .contact-btn__icon {
   font-size: var(--font-size-2xl);
   width: 40px;
   text-align: center;
+  color: var(--color-primary);
 }
 
 .contact-btn div {
@@ -1209,7 +1238,239 @@ select.form-control {
   font-size: var(--font-size-sm);
   margin: var(--space-4) 0;
 }
+/* Sponsors Section */
+.sponsors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-24);
+  align-items: center;
+  justify-items: center;
+  margin-top: var(--space-32);
+}
 
+.sponsor-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-20);
+  background-color: var(--color-surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-card-border);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--duration-normal) var(--ease-standard);
+  min-height: 120px;
+  width: 100%;
+}
+/* Enhanced Sponsors Section */
+.sponsors-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: var(--space-32);
+  align-items: center;
+  margin-top: var(--space-32);
+}
+
+.sponsor-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-24);
+  background-color: var(--color-surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-card-border);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--duration-normal) var(--ease-standard);
+  min-height: 160px;
+}
+
+.sponsor-item:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(var(--color-primary-rgb), 0.3);
+}
+
+.sponsor-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.sponsor-image {
+  max-width: 100%;
+  max-height: 100px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: grayscale(100%) brightness(1.2);
+  transition: all var(--duration-normal) var(--ease-standard);
+}
+
+.sponsor-item:hover .sponsor-image {
+  filter: grayscale(0%) brightness(1);
+  transform: scale(1.05);
+}
+
+/* CTA Sponsor Item */
+.sponsor-item--cta {
+  background: linear-gradient(135deg, 
+    rgba(var(--color-primary-rgb), 0.05), 
+    rgba(var(--color-brand-secondary-rgb), 0.08));
+  border: 2px dashed var(--color-primary);
+  text-align: center;
+}
+
+.sponsor-item--cta:hover {
+  background: linear-gradient(135deg, 
+    rgba(var(--color-primary-rgb), 0.1), 
+    rgba(var(--color-brand-secondary-rgb), 0.15));
+  border-color: var(--color-primary-hover);
+}
+
+.sponsor-cta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+  align-items: center;
+}
+
+.sponsor-cta__title {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+  margin: 0;
+  line-height: var(--line-height-tight);
+}
+
+.sponsor-cta__text {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  margin: 0;
+  line-height: var(--line-height-normal);
+  text-align: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .sponsors-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-20);
+  }
+  
+  .sponsor-item {
+    padding: var(--space-20);
+    min-height: 140px;
+  }
+  
+  .sponsor-image {
+    max-height: 80px;
+  }
+  
+  .sponsor-cta__title {
+    font-size: var(--font-size-lg);
+  }
+  
+  .sponsor-cta__text {
+    font-size: var(--font-size-sm);
+  }
+}
+
+@media (max-width: 480px) {
+  .sponsor-item {
+    padding: var(--space-16);
+    min-height: 120px;
+  }
+  
+  .sponsor-image {
+    max-height: 60px;
+  }
+  
+  .sponsor-cta__title {
+    font-size: var(--font-size-md);
+  }
+}
+
+/* Dark theme adjustments */
+[data-color-scheme="dark"] .sponsor-image {
+  filter: grayscale(100%) brightness(0.8) invert(1);
+}
+
+[data-color-scheme="dark"] .sponsor-item:hover .sponsor-image {
+  filter: grayscale(0%) brightness(1) invert(0);
+}
+
+
+.sponsor-item:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(var(--color-primary-rgb), 0.3);
+}
+
+.sponsor-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.sponsor-image {
+  max-width: 100%;
+  max-height: 80px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: grayscale(100%) brightness(1.2);
+  transition: all var(--duration-normal) var(--ease-standard);
+}
+
+.sponsor-item:hover .sponsor-image {
+  filter: grayscale(0%) brightness(1);
+  transform: scale(1.05);
+}
+
+/* Responsive adjustments for sponsors */
+@media (max-width: 768px) {
+  .sponsors-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-16);
+  }
+  
+  .sponsor-item {
+    padding: var(--space-16);
+    min-height: 100px;
+  }
+  
+  .sponsor-image {
+    max-height: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sponsors-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-12);
+  }
+  
+  .sponsor-item {
+    padding: var(--space-12);
+    min-height: 80px;
+  }
+  
+  .sponsor-image {
+    max-height: 50px;
+  }
+}
+
+/* Enhanced hover effects for dark theme */
+[data-color-scheme="dark"] .sponsor-image {
+  filter: grayscale(100%) brightness(0.8) invert(1);
+}
+
+[data-color-scheme="dark"] .sponsor-item:hover .sponsor-image {
+  filter: grayscale(0%) brightness(1) invert(0);
+}
 /* Responsive Design */
 @media (max-width: 768px) {
   .nav__menu {
